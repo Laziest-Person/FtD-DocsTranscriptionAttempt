@@ -1,0 +1,121 @@
+﻿Weapons
+
+```
+I:GetWeaponCount()
+Inputs: N/A
+Outputs: [int] the number of weapons on the hull - doesn't include weapons on the turrets but does include the turrets themselves.
+Get the number of weapons on the hull. Knowing this number is useful for when you want to call GetWeaponInfo(1) to find out weaponinformation```
+
+```
+I:GetWeaponInfo(weaponIndex)
+Inputs: weaponIndex: [int] the index of the weapon you want information on. O is the first weapon. 
+Outputs: [WeaponInfo] information on the weapon. weaponInfo. Valid is false if you ask for an invalid weaponIndex.
+Gets weapon information for a specific weapon. Useful to figure out what sort of weapon is present.```
+
+```
+WeaponInfo Valid [bool]: false means this WeaponInfo packet is useless. Move onto the next valid one.
+LocalPosition [Vector 3]: the local position in the vehicle of the weapon. x is right, y is up and z is forwards. GlobalPosition [Vector 3]: the global position of the weapon. x is East, y is Up and Z is North. LocalFirePoint [Vector3]: the local position in the vehicle where the projectile or laser will be created. GlobalFirePoint [Vector 3]: the global position in the world where the projectile or laser will be created.
+Speed [float]: the speed in meters per second of the weapon- approximately correct for most weapon types.
+CurrentDirection [Vector 3]: the direction in global coordinate system that the weapon is facing
+WeaponType [int]: the type of the weapon. cannon = 0,missile = 1, laser = 2,harpoon = 3,turret = 4,missilecontrol = 5,fireControlComputer =6
+WeaponSlot [int]: the weapon slot of the weapon itself. 0 -> 5.
+WeaponSlotMask [int]: the weapon slot bit mask. The rightmost bit represents 'ALL' and is always on, and the second bit represents slot 1, etc. (for example 100111 will respond to slots All, 1, 2, and 5)
+Player CurrentlyControllingIt [bool]: true if the player is controlling this weapon at the moment```
+
+```
+I:GetWeaponConstraints(weaponIndex)
+Inputs: weaponIndex: [int] the index of the weapon you want the constraints off. O is the first weapon.
+Outputs: [WeaponConsraints] information on the field-of-fire constraints of the weapon.
+Gets field-of-fire constrains information for a specific weapon.
+Weapon Constraints
+Valid [bool]: false means this Weapon Constraints packet is useless. Move onto the next valid one. MinAzimuth [float]: the minimum azimuth angle in degrees. MaxAzimuth [float]: the maximum azimuth angle in degrees.
+MinElevation [float]: the minimum elevation angle in degrees.
+MaxElevation [float]: the maximum elevation angle in degrees.
+FlipAzimuth [bool]: true if the 'Flip azimuth constraints' toggle is selected.
+InParentConstructSpace [bool]: true if the 'Set the restrictions in the parent construct space' toggle is selected.```
+
+
+```I:GetWeaponBlockInfo(weaponIndex)
+Inputs: weaponIndex: [int] the index of the weapon you want information on. O is the first weapon.
+Outputs: [BlockInfo] the block inforamation of the main component of the weapon. See 'Components' for information on BlockInfo. Gets the block information for a specific weapon.```
+
+```
+I:AimWeaponInDirection(weaponIndex, x,y,z, weaponSlot)
+Inputs: weaponIndex: [int] 0 is the first weapon.
+x,y,z: [floats] the world coordinate scheme direction components to point in. They don't need to be normalised.
+weaponSlot: [int] 0 for all, otherwise 1 to 5.
+Outputs: [int] the number of weapons that can fire in this direction. O for none.
+Aims a weapon in a specific direction. For a turret this will aim all weapons on the turret as well as the turret itself.```
+
+```
+I:FireWeapon(weaponIndex, weaponSlot)
+Inputs: weaponIndex: [int] 0 is the first weapon.
+weaponSlot: [int] 0 will control all weapons
+Outputs: [bool] has any weapon fired? will be true if so.
+Fires a specific weapon. It's important for most weapons that you aim them first as they won't fire if they can't fire in the direction they are aimed.```
+
+```
+I:Get Turret SpinnerCount() - Obsolete
+Inputs: N/A
+Outputs: [int] the number of turrets and spinners on the construct
+Returns the number of turrets and spinners on the construct. You'll need this function if you want to control turreted or spin block mounted weapons individually```
+
+```
+I:GetWeaponCountOnTurretOrSpinner(turret SpinnerIndex) - Obsolete, please use 'GetWeaponCount OnSubConstruct' instead
+Inputs: turretSpinnerIndex: [int] 0 is the first turret or spinner
+Outputs: [int] the number of weapons on this turret or spinner, not including the turret itself
+return the number of weapons on the turret of spinner. If you wanted to control the turret itself then note that it is treated as a hull mounted weapon```
+
+```
+I:GetWeaponInfoOnTurretOrSpinner(turret SpinnerIndex, weaponIndex) - Obsolete, please use 'GetWeaponInfoOnSubConstruct' instead
+Inputs: turretSpinnerIndex: [int] the index of the turret or spinner. O is the first one.
+weaponIndex: [int] the index of the weapon. O is the first one.
+Outputs: [WeaponInfo] a WeaponInfo object. See above for the definition of this structure. Note that changes to this structure in LUA do not affect the weapon itself.
+Get weapon info of a weapon on a turret or spinner```
+
+```
+I:AimWeaponInDirectionOnTurretOrSpinner(turretSpinnerIndex, weaponIndex,x,y,z,weaponSlot) - Obsolete, please use 'AimWeaponInDirectionOnSubConstruct' instead
+Inputs: First argument is now the turret spinner index, otherwise see 'AimWeaponInDirection'
+Outputs: as per AimWeaponInDirection
+Aims a specific weapon on the turret without aiming the turret```
+
+```
+I:FireWeaponOnTurretOrSpinner(turretSpinnerIndex, weaponIndex, weaponSlot) - Obsolete, please use 'FireWeaponOnSubConstruct' instead Inputs: First argument is now the turret spinner index, otherwise see 'FireWeapon' be true if so.
+Outputs: [bool] has any weapon fired? will be true if so.
+Fires a specific weapon. It's important for most weapons that you aim them first as they won't fire if they can't fire in the direction they are aimed.```
+
+```
+I:GetWeaponCountOnSubConstruct(SubConstructIdentifier)
+Inputs: SubConstructIdentifier: [int] This identifier never change in the blueprint, use the SubConstructs-related functions to get it.
+Outputs: [int] the number of weapons on this turret or spinner, not including the turret itself
+return the number of weapons on the turret or spinner. If you wanted to control the turret itself then note that it is treated as a hull mounted weapon```
+
+```
+I:GetWeaponInfoOnSubConstruct(SubConstructIdentifier, weaponIndex)
+Inputs: SubConstructIdentifier: [int] This identifier never change in the blueprint, use the SubConstructs-related functions to get it.
+weaponIndex: [int] the index of the weapon. O is the first one.
+Outputs: [WeaponInfo] a WeaponInfo object. See above for the definition of this structure. Note that changes to this structure in LUA do not affect the weapon itself.
+Get weapon info of a weapon on a turret or spinner```
+
+```
+I:GetWeaponConstraintsOnSubConstruct(SubConstructIdentifier, weaponIndex)
+Inputs: SubConstructIdentifier: [Int] This identifier never change in the blueprint, use the SubConstructs-related functions to get it. weaponIndex: [int] the index of the weapon. O is the first one.
+Outputs: [Weapon Consraints] information on the field-of-fire constraints of the weapon.
+Gets field-of-fire constrains information for a specific weapon.```
+
+```
+I:GetWeaponBlockInfoOnSubConstruct(SubConstructIdentifier, weaponIndex)
+Inputs: SubConstructIdentifier: [int] This identifier never change in the blueprint, use the SubConstructs-related functions to get it. weaponIndex: [int] the index of the weapon. O is the first one.
+Outputs: [BlockInfo] the block inforamation of the main component of the weapon. See 'Components' for information on BlockInfo.
+Gets the block information for a specific weapon.```
+
+```
+I:AimWeaponInDirectionOnSubConstruct(SubConstruct Identifier, weaponIndex,x,y,z,weaponSlot)
+Inputs: 'SubConstructidentifier' is the SubConstruct identifier. For the other parameters, see 'AlmWeaponInDirection' Outputs: as per AimWeaponInDirection
+Aims a specific weapon on the turret without aiming the turret```
+
+```
+I:FireWeaponOnSubConstruct(SubConstructIdentifier, weaponIndex, weaponSlot)
+Inputs: 'SubConstructIdentifier' is the SubConstruct identifier. For the other parameters, see 'FireWeapon' 
+Outputs: [bool] has any weapon fired? will be true if so.
+Fires a specific weapon. It's important for most weapons that you aim them first as they won't fire if they can't fire in the direction they are aimed.```

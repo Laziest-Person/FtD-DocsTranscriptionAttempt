@@ -1,0 +1,48 @@
+﻿
+
+Using Propulsion
+
+```
+I:TellAiThat WeAreTaking Control()
+Inputs:
+Outputs:
+Will stop the AI from issuing propulsion commands for the next second, after which it will assume control again. This is exactly what happens when the player presses a control key on an AI controlled vehicle.```
+
+I:AddPropulsionRequest(type, drive)
+Inputs: type: Main = 0, Secondary = 1, Tertiary = 2, Roll = 3, Pitch = 4, Yaw = 5, Forwards = 6, Up = 7, Right = 8, A = 9, B = 10, C = 11, D = 12, E = 13] drive: [float] the amount to add to the axis
+Outputs: N/A
+Adds a propulsion request to the specified axis. This is additive to any other requests made to the axis in the same frame and is clamped between -1 and 1```
+
+```
+I:SetPropulsionRequest(type, drive)
+Inputs: type: Main = 0, Secondary = 1, Tertiary = 2, Roll = 3, Pitch = 4, Yaw = 5, Forwards = 6, Up = 7, Right = 8, A = 9, B = 10, C = 11, D = 12, E = 13] drive: [float] the amount the axis is set to
+Outputs: N/A
+between 1 and 1
+Sets the propulsion request to the specified axis. This overwrites any other requests made to the axis in the same frame and is clamped ```
+
+```
+I:GetPropulsionRequest(type)
+Inputs: type: Main = 0, Secondary = 1, Tertiary = 2, Roll = 3, Pitch = 4, Yaw = 5, Forwards = 6, Up = 7, Right = 8, A = 9, B = 10, C = 11, D = 12, E = 13] Outputs: N/A
+Gets the sum of all requests made to the specified axis in the previous frame or reads the value that the drive is set to if the type is Main, Secondary or Tertiary```
+
+```
+I:Request ComplexControllerStimulus(stim)
+Inputs: stim: none = 0,T =1,G =2,Y =3,H =4,U =5,J =6,1 =7,K =8,O= 9,L=10,up=11, down=12,left=13,right=14 Outputs: N/A
+Requests a stimuli as per the complex controller block.```
+
+```
+I:MoveFortress
+Inputs: direction [Vector3]: Direction to move the fortress in. Limited to 1 meter. Outputs: N/A
+Move fortress in any direction. Limited to 1 meter.```
+
+```
+I:Request CustomAxis(axisName, drive)
+Inputs: axisName [string]: name of axis to create/use. Limited to 32 characters.
+drive [float]: value to add to the axis on this frame.
+Outputs: N/A
+Creates or uses an axis with a custom name. Adds a value to the axis. Axes values are limited to between -1 and 1. Axes names are limited to 32 characters.```
+
+```
+I:GetCustomAxis(axisName)
+Inputs: axisName [string]: name of axis to get value for.
+Outputs: The value of the axis as a float. 0 if axis not created yet.```

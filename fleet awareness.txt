@@ -1,0 +1,25 @@
+Fleet Awareness
+
+Fleet The Fleet Awareness API provides scripts basic information about the fleet the craft is in.
+
+```
+I.FleetIndex (read only)
+Outputs: [int] Position of the ship in the fleet, starting from 0.
+Returns the index of the ship in the fleet. Starts at 0.```
+
+```
+I.Fleet (read only)
+Outputs: [FleetInfo] Information about the fleet
+Returns the current state of the fleet.```
+
+```
+I.IsFlagship (read only)
+Outputs: [bool] Is the craft the fleet flagship?
+Used to determine whether the ship is a flagship of a fleet.```
+
+```
+FleetInfo
+ID:[int] Unique ID of the fleet.
+Name:[string] Name of the fleet.
+Flagship: [FriendlyInfo] Information about the flagship of the fleet.
+Members: [FriendlyInfo[]] A table of information regarding the fleet's members. MAY CONTAIN NILS!```

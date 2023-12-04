@@ -1,0 +1,60 @@
+Accessing Target Info
+
+```
+I:GetNumberOfMainframes() Inputs: N/A
+Outputs: The number of mainframes on your vehicle.
+The mainframe count of your vehicle is useful for requesting targets```
+
+```
+I:GetNumberOfTargets(mainframeIndex)
+Inputs: mainframeIndex: 0 being the first mainframe. Use GetNumberOfMainframes() to find out how many there are. Outputs: The number of targets in this particular mainframe. Returns 0 if such a mainframe does not exist.
+The target count is important when calling GetTarget(mainframeIndex, targetIndex).```
+
+```
+I:GetTargetInfo(mainframeIndex, targetIndex)
+Inputs: mainframeIndex: O being the first mainframe. Use GetNumberOfMainframes() to find out how many there are. targetIndex: O being the first target. If target prioritisation card is in use O is the highest priority target.
+object
+Outputs: A Targetinfo object
+The TargetInfo object contains many interesting variables relating to the target. Valid will be false if the target has died but the Al has not yet cleared it.```
+
+```
+TargetInfo
+
+Valid: [bool] true if a target was correctly returned
+Priority: [int] 0 is highest priority
+Score: [float] high is a good score- taken from target prioritisation card
+AlmPointPosition: [Vector3] position in game world of aim point (this is the current position of the block that's being aimed for)
+Team: [int] team of target
+Protected: [bool] is it salvage? Will be false for salvage.
+Position: [Vector 3] position in game world of target object.
+Velocity: [Vector 3] velocity in game world in meters per second
+Player TargetChoice: [bool] has the player set this as the target?
+Id: [int] the unique integer Id of the target.```
+
+```
+I:GetTargetPositionInfo(mainframeIndex, targetIndex)
+Inputs: mainframeIndex: O being the first mainframe. Use GetNumberOfMainframes() to find out how many there are.
+targetIndex: 0 being the first target. If target prioritisation card is in use 0 is the highest priority target.
+Outputs: A TargetPositionInfo object
+The TargetPositionInfo object contains many interesting variables relating to the target. Valid will be false if the target has died but the AI has not yet cleared it.```
+﻿
+```
+I:GetTargetPositionInfoForPosition(mainframeIndex, x,y,z)
+Inputs:
+mainframeIndex: [int] 0 being the first mainframe. Use GetNumberOfMainframes() to find out how many there are.
+x: [float] east west in meters.
+y: [float] up down in meters (0 is sea level).
+z: north south in meters.
+Outputs: A TargetPositionInfo object for this point in space. Velocity will be 0.
+The TargetPositionInfo object contains many interesting variables relating to the target.```
+
+```
+TargetPositionInfo
+Valid: [bool] true if target position info correctly returned.
+Azimuth: [float] degrees off nose of our vehicle where positive is clockwise
+Elevation: [float] degrees off nose of our vehicle where positive is downwards. This often has dodgy values
+ElevationForAltitudeComponentOnly: [float] the elevation off nose of the target's altitude. Robustly calculated Range: [float] the range to the target
+Direction: [Vector3] the direction to the target (absolute, not normalised)
+GroundDistance: [float] the distance along the ground (ignoring vertical component) to the target
+AltitudeAboveSeaLevel: [float] in metres.
+Position: [Vector3] position of target```

@@ -1,0 +1,34 @@
+Resources
+
+Scripts can use the following fields to get information about known resource zones. May change in the future to require a detector.
+
+```
+I.ResourceZones (read only)
+Outputs: [ResourceZoneInfo[]] List of ResourceZones
+Returns a Lua table containing a list of known resource zones.```
+
+```
+I.Resources (read only)
+Outputs: [ResourceInfo] Ship resource data
+Returns information about a ship's available resources.```
+
+```
+ResourceZoneInfo
+Id [int]: Unique ID of the Resource Zone
+Name [string]: Name of the Resource Zone
+Position [Vector 3]: Position of the Resource Zone
+Radius [float]: Radius of the Resource Zone
+Resources [ResourceInfo]: Available resources of the Resource Zone```
+
+```
+ResourceInfo
+Crystal Total [float]: Total Crystal resources.
+CrystalMax [float]: Max Crystal resources.
+MetalTotal [float]: Total Metal resources.
+MetalMax [float]: Max Metal resources.
+NaturalTotal [float]: Total Natural resources.
+Natural Max [float]: Max Natural resources.
+OilTotal [float]: Total Oil resources.
+OilMax [float]: Max Oil resources.
+ScrapTotal [float]: Total Scrap resources.
+ScrapMax [float]: Max Scrap resources.```

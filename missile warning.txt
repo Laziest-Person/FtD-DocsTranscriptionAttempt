@@ -1,0 +1,22 @@
+Missile Warning
+
+```
+I:GetNumberOfWarnings() Inputs: N/A
+Outputs: [int] the number of missiles being warned on
+Return the number of missiles the construct has warnings for```
+
+```
+I:GetMissileWarning(missileIndex)
+Inputs: missileIndex: [int] the index of the missile
+Outputs: [MissileWarningInfo] information on the missile. missileWarningInfo. Valid = false if you didn't request an existing missile index
+Request information on a specific missile warning```
+
+```
+MissileWarningInfo
+Valid: [bool] false if the warning is junk due to incorrect indices.
+Position: [Vector 3] the position of the missile
+Velocity: [Vector3] the velocity of the missile in meters per second
+Range: [float] the distance from centre of mass of your construct to the missile
+Azimuth :[float] the azimuth angle between your construct's forward direction and the missile (degrees)
+Elevation: [float] the elevation angle between your construct's forward direction and the missile (degrees) TimeSinceLaunch: [float] the time since missile launch.
+Id: [int] the unique Id of the missile```

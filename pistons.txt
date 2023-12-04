@@ -1,0 +1,34 @@
+Pistons
+(obsolete?)
+
+Pistons have their own interface because they use 'SubConstruct' identifiers 
+
+```
+I:GetPistonExtension(SubConstructIdentifier)
+Inputs: 
+SubConstructidentifier:[int] the persistent identifier of the SubConstruct.
+Outputs: [float] the extension distance of the piston in meters
+Get the extension of the piston, -1 if not found.```
+
+```
+I:GetPistonVelocity(SubConstructIdentifier)
+Inputs:
+SubConstructIdentifier:[int] the persistent identifier of the SubConstruct.
+Outputs: [float] the velocity of the piston in meters per second
+Get the velocity of the piston (always positive), -1 if not found.```
+
+```
+I:SetPistonExtension(SubConstructIdentifier,ExtensionDistance)
+Inputs:
+SubConstructIdentifier:[int] the persistent identifier of the SubConstruct.
+ExtensionDistance:[float]the extension distance of the piston (in meters, will be clamped if necessary)
+Outputs: N/A
+Set the extension of the piston.```
+
+```
+I:SetPistonVelocity(SubConstructIdentifier,ExtensionVelocity)
+Inputs:
+SubConstructIdentifier:[int] the persistent identifier of the SubConstruct.
+ExtensionDistance:[float]the velocity of the piston in meters per second (between 0.1 and 2)
+Outputs: N/A
+Set the velocity of the piston.```

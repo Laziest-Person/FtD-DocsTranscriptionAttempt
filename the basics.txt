@@ -1,0 +1,16 @@
+﻿The Basics
+
+The basic code file needs a function called Update that takes an input called I. It should look like this-
+
+```function Update(I)
+-- put your code here
+end```
+
+I is the interface to the game and contains all the function calls you see on these help pages.
+The code in Update will be executed every single physics step (the game runs at 40 physics steps per in game second of time)
+
+```
+-- creates a comment line so the line '-- put your code here' is never executed by the game. Comments are for explaining how your code functions. Here is a simple example of a function that uses one of the interface functions to write 'Hello' to the HUD
+function Update(I)
+I:Log('Hello')
+end```

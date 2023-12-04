@@ -1,0 +1,136 @@
+Main Index,Component,Sub-index,Type,Property,What they do
+0,Balloon deployer,0,bool,Get,  
+0,Balloon deployer,1,bool,Set,
+1,Drive maintainer,0,int,Get/set,channel  
+1,Drive maintainer,1,int,Get/set,drive    
+2,All pumps (helium and air),0,bool,Get,on   
+2,All pumps (helium and air),1,bool,Set,on/off  
+2,All pumps (helium and air),2,float,Get/set,buoyancy fraction   
+2,All pumps (helium and air),3,float,Get,Get fraction of volume that is flooded    
+3,Resource gatherer,0,bool,Get/set,on/off   
+4,Oil drill,0,bool,Get/set,on/off   
+5,Ammo processor,0,bool,Get/set,on/off     
+6,Fuel refinery,0,bool,Get/set,on/off     
+6,Fuel refinery,1,float,Get,get dangerous gas level     
+6,Fuel refinery,2,float,Get,Get refining efficiency    
+6,Fuel refinery,3,float,Get,Get time per batch    
+7,Tractor beams,0,bool,Get/set,on/off     
+7,Tractor beams,1,int,Get,Get the unique id of the selected vehicle   
+7,Tractor beams,2,int,Get,Select the vehicle with the specified unique id    
+7,Tractor beams,3,float,Get/set,Get/set hold distance     
+7,Tractor beams,4,float,Get/set,hold azimuth     
+7,Tractor beams,5,float,Get/set,hold elevation   
+8,Hydrofoils,0,float,Get/set,angle   
+9,Propulsion,0,float,Get/set,drive fraction.    
+9,Propulsion,1,float,Get,propulsion requests to this component so far this frame.     
+9,Propulsion,2,float,Set,Add a propulsion request to this component.      
+10,Shield Projector,0,float,Get/set,total propulsion request to this component last frame.       
+10,Shield Projector,3,float,Get,Max force of this component    
+10,Shield Projector,0,bool,Get,Whether the shield is functioning.     
+10,Shield Projector,1,Int,Get/set,the shield type (0 off, 1 reflect, 2 disrupt, 3 laser absorb).    
+10,Shield Projector,2,float,Get/set,strength.    
+10,Shield Projector,4,float,Get/set,azimuth.      
+10,Shield Projector,5,float,Get/set,elevation.    
+10,Shield Projector,6,float,Get/set,range.      
+10,Shield Projector,7,float,Get/set,width.     
+10,Shield Projector,8,float,Get/set,height.      
+10,Shield Projector,9,float,Get/set,alpha.      
+10,Shield Projector,10,float,Get/set,red.       
+10,Shield Projector,11,float,Get/set,green.      
+10,Shield Projector,12,float,Get/set,blue.       
+11,Helium Pump,0,bool,Get,Whether the airpump is on (buoyancy fraction > 0).      
+11,Helium Pump,0,FALSE,Sets buoyance fraction to 0.   
+11,Helium Pump,0,TRUE,Sets buoyancy fraction to 1.      
+11,Helium Pump,2,float,Get/set,buoyancy fraction.       
+11,Helium Pump,3,float,Get,Get fraction of volume that is flooded.      
+12,Spotlight,0,float,Get/set,cone angle.      
+12,Spotlight,1,float,Get/set,azimuth angle.       
+12,Spotlight,2,float,Get/set,elevation angle.       
+12,Spotlight,3,float,Get/set,Intensity.       
+12,Spotlight,4,float,Get/set,range.      
+12,Spotlight,5,float,Get/set,red.       
+12,Spotlight,6,float,Get/set,green.       
+12,Spotlight,7,float,Get/set,blue.     
+13,Advanced Cannon laser targeter,0,Int,Get/set  
+13,Advanced Cannon laser targeter,0,float,Get/set
+13,Advanced Cannon laser targeter,1,float,Get      
+13,Advanced Cannon laser targeter,2,float,Set      
+13,Advanced Cannon laser targeter,2,float,Get    
+14,CRAM cannon laser targetter,0,Int,Get   
+14,CRAM cannon laser targetter,1,float,Get 
+14,CRAM cannon laser targetter,2,float,Set       
+14,CRAM cannon laser targetter,2,float,Get    
+15,Warp drive,0,bool,Get   
+15,Warp drive,0,Int,Set      
+15,Warp drive,1,float,Get     
+15,Warp drive,1,float,Get      
+15,Warp drive,1,float,Get  
+15,Warp drive,2,float,Get   
+15,Warp drive,2,float,Get      
+15,Warp drive,2,float,Get   
+15,Warp drive,3,float,Get      
+15,Warp drive,3,float,Get  
+16,Particle cannon lense,0,Int,Get    
+17,Steam boiler controller,0,float,Get/set     
+17,Steam boiler controller,1,float,Get   
+17,Steam boiler controller,2,float,Get     
+18,Fuel engine generator,0,float,Get/set      
+18,Fuel engine generator,1,float,Get     
+18,Fuel engine generator,2,float,Get      
+18,Fuel engine generator,3,float,Get       
+18,Fuel engine generator,4,float,Get    
+19,Sail Main Block,0,Int,get,Get the sail type (0= three point sall, 1 square rigged sail).       
+19,Sail Main Block,0,float,get/set,Mast winch setting.      
+19,Sail Main Block,1,float,get/set,Boom winch setting. 
+20,Advanced Cannon Ammo Intake,0,Int,Get,Get unique id of the associated ammo controller. -1 otherwise.      
+20,Advanced Cannon Ammo Intake,1,int,Get/set,Select an ammo controller by its unique id.  
+20,Advanced Cannon Ammo Intake,2,Int,Set,Select an ammo controller by its component index.
+21,Advanced Cannon Ammo Controller,0,Int,Get/set,Get/set unique Id.   
+22,Al Wireless Transmitter,0,Int,Get/set,Get/set channel.  
+23,AI Wireless Receiver,0,int,Get/set,Get/set channel.   
+24,Al Aimpoint Selection Card,0,Int,Get/set,Get/set almpoint selection type (0= random, 1 ammo and AI).  
+25,Detection Component,0,bool,Get/set,On/off.
+26,AI Mainframe,0,int,Get/set,Al movement mode (0 Off. 1 Manual, 2 Automatic, 3 Fleet).    
+26,AI Mainframe,1,int,Get/set,Al firing mode (0= Off. 1 = On).
+27,Laser Colorer,0,float,Get/set,Get/set red.  
+27,Laser Colorer,1,float,Get/set,Get/set green.    
+27,Laser Colorer,2,float,Get/set,Get/set blue.
+28,Laser Missile Defence,0,float,Get/set,Get/set red.
+28,Laser Missile Defence,1,float,Get/set,Get/set green.    
+28,Laser Missile Defence,2,float,Get/set,Get/set blue.   
+29,Particle Cannon,0,float,Get/set,Red.  
+29,Particle Cannon,1,float,Get/set,Green.  
+29,Particle Cannon,2,float,Get/set,Blue.   
+30,Light Fitting,0,float,Get/set,Intensity.   
+30,Light Fitting,1,float,Get/set,Range.    
+30,Light Fitting,2,float,Get/set,Red.    
+30,Light Fitting,3,float,Get/set,Green.     
+30,Light Fitting,4,float,Get/set,Blue.  
+31,Simple Laser,0,float,Get/set,Red.   
+31,Simple Laser,1,float,Get/set,Green.  
+31,Simple Laser,2,float,Get/set,Blue.    
+32,Smoke Generator,0,float,Get/set,Particle speed.     
+32,Smoke Generator,1,float,Get/set,Particle size.    
+32,Smoke Generator,2,float,Get/set,Red.     
+32,Smoke Generator,3,float,Get/set,Green.      
+32,Smoke Generator,4,float,Get/set,Blue.  
+33,Hologram Projector,0,bool,Get/set,On/off.   
+33,Hologram Projector,1,bool,Get/set,Mirrored. 
+33,Hologram Projector,2,float,Get/set,Width.    
+33,Hologram Projector,3,float,Get/set,Height.     
+33,Hologram Projector,4,float,Get/set,Distance.     
+33,Hologram Projector,5,float,Get/set,Right translation.      
+33,Hologram Projector,6,float,Get/set,Up translation.     
+33,Hologram Projector,7,float,Get/set,Azimuth.     
+33,Hologram Projector,8,float,Get/set,Elevation.    
+33,Hologram Projector,9,float,Get/set,Rotation.   
+34,Poster Holder,0,float,Get/set,Width.    
+34,Poster Holder,1,float,Get/set,Height.
+35,Electric engine,power fraction,float,Get/set,The fraction of power that the engine is currently using.  
+35,Electric engine,burn rate,float,Get/set,The rate at which the engine is burning fuel.     
+35,Electric engine,storage module pressure,float,Get,The pressure of the steam in the storage module.  
+36,Steam boiler controller,on,bool,Get,Whether the steam boiler is currently on.     
+36,Steam boiler controller,power fraction,float,Get/set,The fraction of power that the steam boiler is currently using.   
+36,Steam boiler controller,burn rate,float,Get/set,The rate at which the steam boiler is burning fuel.   
+37,Air pump,on,bool,Get,Whether the air pump is currently on.  
+37,Air pump,buoyancy fraction,float,Get/set,The fraction of the vessel's volume that is currently filled with air.

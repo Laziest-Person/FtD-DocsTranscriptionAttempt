@@ -1,0 +1,19 @@
+Logging and Messages
+
+```
+I:Log(message)
+Inputs:
+message: [string] the message you want to write to the log.
+Outputs: N/A
+Writes a message to the log. Log is visible when editing the LUA box and appears in the 'Errors / Log' panel. The last 100 log messages are maintained```
+
+```
+I:ClearLogs() Inputs: N/A
+Outputs: N/A
+Clears your log. Pretty harmless!```
+
+```
+I:LogToHud(message)
+Inputs: message: [string] the message you want to write to the HUD.
+Outputs: N/A
+Writes a message to the HUD. HUD messages are visible during normal play and when on the map.```

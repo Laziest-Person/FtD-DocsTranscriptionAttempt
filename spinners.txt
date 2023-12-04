@@ -1,0 +1,44 @@
+Spinners
+(obsolete?)
+
+Spin blocks spinners have their own interface because they use 'SubConstruct' identifiers 
+
+```
+I:SetSpinBlockSpeedFactor(SubConstructIdentifier,speedFactor)
+Inputs: 
+SubConstructIdentifier:[int] the persistent identifier of the SubConstruct.
+speedFactor:[float] 0 to 1, the fractional power output
+Outputs: N/A
+Set the speed factor. In continuous mode spinners this allows some blades to spin slower than others, in insta-spin blades this is related to the speed they are spinning at (1 is max speed, 0 is no speed), and in rotation spinners this does nothing.```
+
+```
+I:SetSpinBlockPowerDrive(SubConstructIdentifier,drive)
+Inputs: 
+SubConstructIdentifier:[int] the persistent identifier of the SubConstruct.
+drive:[float] the relative power use of the spinner (0 to 10).
+Outputs: N/A
+Sets the power drive, this allows heliblades to produce more force. Requires engine power. O removes engine use. 10 is maximum power```
+
+```
+I:SetSpinBlockRotationAngle(SubConstructIdentifier, angle)
+Inputs:
+SubConstructIdentifier:[int] the persistent identifier of the SubConstruct.
+angle: [float] angle in degrees to turn to.
+Outputs: N/A
+Sets the angle of rotation. Changes the spinner into Rotate mode. 'Rotatebackwards' is not available through this interface but you shouldn't```
+
+```
+I:SetSpinBlockContinuousSpeed(SubConstructIdentifier, speed)
+Inputs:
+SubConstructIdentifier:[int] the persistent identifier of the SubConstruct.
+speed:[float] speed to rotate at. 30 is the maximum so values from -30 to 30 work.
+Outputs:N/A
+Sets the speed of rotation. Changes the spinner into continuous mode. 'ContinuouseReverse' mode is not available through this interface so set the speed negative to facilitate reverse spinning.```
+
+```
+I:SetSpinBlockInstaSpin(SubConstructIdentifier,magnitudeAndDirection)
+Inputs:
+SubConstructidentifier:[int] the persistent identifier of the SubConstruct.
+magnitudeAndDirection:[float] -1 means spin backwards full speed, 1 is spin forwards full speed
+Outputs: N/A
+Spins the blades in a direction and speed determined by magnitudeAndDirection. Will set the spinner into instaspin forwards mode and will affect speed factor variable of the spinner.```

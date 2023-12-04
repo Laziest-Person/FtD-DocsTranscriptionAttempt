@@ -1,0 +1,450 @@
+ Components:
+ 
+Components table is in "Components Table FtD.csv"
+
+BlockInfo
+Valid: [bool] false means this Blockinfo packet is useless
+Position: (Vector 3) position in world (east, up, north)
+LocalPosition: [Vector 3] position in construct (right, up, forwards)
+LocalPositionRelativeToCom: [Vector 3] local position relative to the center of mass
+Forwards: [Vector 3) forwards direction in world(east, up, north)
+LocalForwards: [Vector 3] forward direction in construct (right, up, forwards)
+Rotation:[Quaternion] the rotation of the block in world coordinates
+Local Rotation: (Quaternion) the rotation of the block in the vehicle's (or turret's) coordinate system.
+Sub Constructidentifier: [int] the sub construct identifier of the subconstruct the block is part of.
+CustomName:[string] the custom name assigned to the block
+
+
+Interface Functions / Methods          Components
+
+```
+I:Component_GetCount(type)
+Inputs:
+type: [int] the type of component you want the count of.
+
+Outputs: [int] the number of components of this type.
+Returns the number of components of this type```
+
+```
+I:Component GetLocalPosition(type, index)
+Inputs: type: [int] the type of component you want the local position of.
+index: [int] the index of the component you want the position of
+
+Outputs: [Vector3] a Vector 31 is a Vector 3 where.x.y and z are integers.
+Returns the local position in the vehicle of this component.```
+
+```
+I:Component GetBlockInfo(type, index)
+Inputs:
+type: [int] the type of component you want information on.
+index: [int] the index of the component you want block info for..
+
+Outputs: [Blockinfo] a Blockinfo structure relating to the component.
+Returns an extensive BlockInfo object for the component.```
+
+```
+I:Component_GetBoolLogic(type, blockIndex)
+Inputs: 
+type: [int] the type of component you want boolean logic for.
+blockindex: [int] the index of the component you want boolean logic for.
+
+Outputs: [bool] the first boolean logic for this component. For a component without boolean logic, or a block index that doesn't exist, false is returned.
+Returns a boolean (true/false) for a component. Depending on the type of this component this means different things (or nothing at all).
+Default return is false.```
+
+```
+I:Component_GetBoolLogic_1(type, blockindex, propertyIndex)
+Inputs:
+type: [int] the type of component you want boolean logic for.
+blockIndex: [int] the index of the component you want boolean logic for.
+propertyIndex: [int] the index of the index of the boolean logic you want.
+
+Outputs: [bool] the specified boolean logic for this component. For a component without boolean logic, or an index that doesn't exist, false is returned.
+Returns a boolean (true/false) for a component. Depending on the type of this component this means different things (or nothing at all).
+Default return is false.```
+
+```
+I:Component_SetBoolLogic(type, index, baol)
+Inputs:
+type: [int] the type of component you want to set boolean logic for.
+Index: [int] the index of the component you want to set boolean logic for.
+bool: [bool] the true/false you want to set.
+
+Outputs: N/A
+Sets the first boolean logic for a component. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetBoolLogic_1(type, blockIndex, propertyIndext, bool1)
+Inputs:
+type: [int] the type of component you want to set boolean logic for.
+blockindex: [int] the index of the component you want to set boolean logic for.
+
+propertyIndex1: [int] the index of the boolean logic you want to set.
+bool1: [bool] the true/false you want to set.
+
+Outputs: N/A
+Sets the specified boolean logic for a component. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetBoolLogic_2(type, blockindex, propertyIndext, boolt, propertyIndexz, bool2)
+Inputs:
+type: [int] the type of component you want to set boolean logic for.
+blockIndex: [int] the index of the component you want to set boolean logic for.
+
+propertyIndex1: [int] the index of the first boolean logic you want to set
+bool1: [bool] the true/false you want to set the first logic to.
+
+propertyIndex2: [int] the index of the second boolean logic you want to set.
+bool2: [bool] the true/false you want to set the second logic to.
+
+Outputs: N/A
+Sets the two specified boolean logics for a component. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetBoolLogic_3(type, blockIndex, propertyîndext, boolt, propertyIndex2, bool2, propertyIndex3, bool3)
+
+Inputs: 
+type: [int] the type of component you want to set boolean logic for.
+blockIndex: [int] the index of the component you want to set boolean logic for.
+
+propertyIndex1: [int] the index of the first boolean logic you want to set.
+bool1: [bool) the true/false you want to set the first logic to.
+
+propertyIndex2: [int] the index of the second boolean logic you want to set.
+bool2: [bool] the true/false you want to set the second logic to.
+
+propertyIndex3: [int] the index of the third boolean logic you want to set.
+bool3: [bool] the true/false you want to set the third logic to.
+
+Outputs: N/A
+Sets the three specified boolean logics for a component. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_GetFloatLogic(type, blockIndex)
+Inputs:
+type: [int] the type of component you want float logic for.
+blockindex: [int] the index of the component you want float logic for.
+
+Outputs (float) the first float logic for this component. For a component without float logic, or a block Index that doesn't exist, O is returned.
+Returns a floating point value for a component. Depending on the type of this component this means different things (or nothing at all). Default return is 0.```
+
+```
+I:Component_GetFloatLogic_1(type, blockIndex, propertyIndex)
+Inputs:
+type: [int] the type of component you want float logic for.
+
+blockIndex: [int] the index of the component you want flout logic for.
+propertyIndex: [int] the index of the index of the float logic you want.
+
+Outputs: [float] the specified float logic for this component. For a component without float logic, or an index that doesn't exist, O is returned.
+Returns a floating point value for a component. Depending on the type of this component this means different things (or nothing at all). Default return is 0.```
+
+```
+I:Component_SetFloatLogic(type, index, float)
+
+Inputs:
+type: [int] the type of component you want to set float logic for.
+index: [int] the index of the component you want to set float logic for.
+float: [float) the floating point value you want to set.
+
+Outputs: N/A
+Sets the first float logic for a component. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetFloatLogic_1(type, blockindex, propertyIndext, float 1)
+Inputs:
+blockIndex: [int] the index of the component you want to set float logic for.
+
+propertyIndex1: [int] the index of the float logic you want to set.
+float1: [float) the floating point value you want to set
+
+Outputs: N/A
+Sets the specified float logic for a component. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetFloatLogic_2(type, blockIndex, propertyIndex1, float1, propertyIndex2, float2)
+
+Inputs:
+type: [int] the type of component you want to set float logic for.
+blockIndex: [int] the index of the component you want to set float logic for.
+
+propertyIndex1: [int] the index of the first float logic you want to set.
+float1: [float] the floating point value you want to set the first logic to.
+
+propertyindex2: [int] the index of the second float logic you want to set.
+float2: [float] the floating point value you want to set the second logic to.
+
+Outputs: N/A
+Sets the two specified float logics for a component. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetFloatLogic_3(type, blockIndex, propertyIndex, float, propertyIndex2, float, propertyIndex3, floot 3)
+
+Inputs:
+type: [int] the type of component you want to set float logic for.
+blockIndex: [int] the index of the component you want to set float logic for.
+
+propertyIndex1: [int] the index of the first float logic you want to set.
+float1: [float] the floating point value you want to set the first logic to.
+
+propertyIndex2: [int] the index of the second float logic you want to set.
+float2: [float] the floating point value you want to set the second logic to.
+
+propertyIndex3: [int] the index of the third float logic you want to set.
+float3: [float] the floating point value you want to set the third logic to.
+
+Outputs: N/A
+Sets the three specified float logics for a component. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_GetIntLogic(type, blockIndex)
+
+Inputs:
+type: [int] the type of component you want int logic for.
+blockIndex: [int] the index of the component you want int logic for.
+
+Outputs: intLogic: [int] the int logic for the specified component.
+Returns the int logic for the specified component. If the component does not have an int logic, the default value is returned.```
+
+```
+I:Component_GetIntLogic_1(type, blockIndex, propertyIndex)
+
+Inputs:
+type: [int] the type of component you want int logic for.
+blockIndex: [int] the index of the component you want int logic for.
+propertyIndex: [int] the index of the index of the int logic you want.
+
+Outputs: Logic: [int] the int logic for the specified property of the specified component.
+Returns the int logic for the specified property of the specified component. If the property does not have an int logic, the default value is returned.```
+
+```
+Component_SetIntLogic_1(type, bluckIndex, propertyIndex1, int1)
+
+Inputs:
+type: [int] the type of component you want to set int logic for.
+Index: [int] the index of the component you want to set int logic for.
+
+Int: [int] the integer number you want to set.
+
+Outputs: N/A
+Sets the first int logic for a component. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetIntLogic_2(type, blockindex, propertyIndex, int 1, propertyIndex2, int2)
+
+Inputs: 
+type: [int] the type of component you want to set int logic for.
+blockIndex: [int] the index of the component you want to set int logic for.
+
+propertyIndex1: [int] the index of the first int logic you want to set.
+int1: [int] the integer number you want to set the first logic to.
+
+propertyIndex2: [int] the index of the second int logic you want to set.
+int2: [int] the integer number you want to set the second logic to.
+
+Outputs: N/A
+Sets the two specified int logics for a component. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component SetIntLogic_3(type, blockIndex, propertyIndext, int1, propertyIndex2, int2, propertyIndex3, int 3)
+
+Inputs:
+type: [int] the type of component you want to set int logic for.
+blockindex: [int] the index of the component you want to set int logic for.
+
+propertyIndext: [int] the index of the first int logic you want to set.
+Int1: [int] the integer number you want to set the first logic to.
+
+propertyIndex2: [int] the index of the second int logic you want to set.
+Int2: [int] the integer number you want to set the second logic to.
+
+propertyIndex3: [int] the index of the third int logic you want to set.
+int3: [int] the integer number you want to set the third logic to.
+
+Outputs: N/A
+Sets the three specified int logics for a component. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetBoolLogicAll(type, bool)
+
+Inputs: 
+type: [int] the type of component you want to set boolean logic for.ool (bool] the bool (true/false) you want to set.
+
+Outputs: N/A
+Sets the first boolean logic for all components of a specific type. Depending on the type of this component this means different things (or nothing at all)```
+
+```
+I:Component_SetBoolLogicAll_1(type, propertyindext, boolf)
+
+Inputs:
+type: [int] the type of component you want to set boolean logic for.
+blockIndex: [int] the index of the component you want to set boolean logic for.
+
+propertyIndex1: [int] the index of the boolean logic you want to set.
+bool1: [bool] the true/false you want to set.
+
+Outputs: N/A
+Sets the specified boolean logic for all components of a specific type. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetBoolLogicAll_2(type, propertyIndext, boolt, propertyIndex2, hoo12)
+
+Inputs: 
+type: [int] the type of component you want to set boolean logic for.
+
+propertyIndex1: [int] the index of the first boolean logic you want to set.
+bool1: [bool] the true/false you want to set the first logic to.
+
+propertyIndex2: [int] the index of the second boolean logic you want to set.
+bool2: [bool] the true/false you want to set the second logic to.
+
+Outputs: N/A
+Sets the two specified boolean logics for all components of a specific type. Depending on the type of this component this means different things (or nothing at all.)```
+
+```
+I:Component_SetBoolLogicAll_3(type, propertyIndext, boolt, propertyIndex2, boolz, propertyIndex3, bool3)
+
+Inputs: 
+type: [int] the type of component you want to set boolean logic for.
+
+propertyIndex1: [int] the index of the first boolean logic you want to set
+bool1: [bool] the true/false you want to set the first logic to.
+
+propertyIndex2: [int] the index of the second boolean logic you want to set.
+bool2: [bool] the true/false you want to set the second logic to.
+
+propertyIndex3: [int] the index of the third boolean logic you want to set.
+bool3: [bool] the true/false you want to set the third logic to.
+
+Outputs: N/A
+Sets the three specified boolean logics for all components of a specific type. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetFloatLogicAll(type, float)
+
+Inputs:
+type: [int] the type of component you want to set floating point logic for.
+float [float] the floating point number you want to set.
+
+Outputs: N/A
+Sets the first floating point logic for all components of a specific type. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetFloatLogicAll_1(type, propertyIndext, float 1)
+
+Inputs: 
+type: [int] the type of component you want to set float logic for.
+
+propertyIndex1: [int] the index of the float logic you want to set.
+float1: [float] the floating point value you want to set.
+
+Outputs: N/A
+Sets the specified floating point logic for all components of a specific type. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetFloatLogicAll_2(type, propertyIndext, float 1, propertyIndex2, float 2)
+
+Inputs: 
+type: [int] the type of component you want to set float logic for.
+
+propertyIndex1: [Int] the index of the first float logic you want to set.
+float1: [float) the floating point value you want to set the first logic to.
+
+propertyIndex2: [int] the index of the second float logic you want to set
+float2: [float) the floating point value you want to set the second logic to.
+
+Outputs: N/A
+Sets the two specified floating point logics for all components of a specific type. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetFloatLogicAll_3(type, propertyIndex, float, propertyIndexz, float 2, propertyIndex3, float 3)
+
+Inputs:
+type: [int] the type of component you want to set float logic for.
+
+propertyindex1: [int] the index of the first float logic you want to set.
+float1: [float] the floating point value you want to set the first logic to.
+
+propertyIndex2: [int] the index of the second float logic you want to set.
+float2: [float] the floating point value you want to set the second logic to.
+
+propertyIndex3: [int] the index of the third float logic you want to set.
+float3: [float) the floating point value you want to set the third logic to.
+
+Outputs: N/A
+Sets the three specified floating point logics for all components of a specific type. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetIntLogicAll(type, int)
+
+Inputs:
+type: [int] the type of component you want to set integer logic for.
+int [int] the integer you want to set.
+
+Outputs: N/A
+Sets the first integer logic for all components of a specific type. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetIntLogicAll_1(type, propertyIndex1, int1)
+
+Inputs:
+type: [int] the type of component you want to set int logic for.
+
+propertyIndex1: [int] the index of the int logic you want to set
+int1: [int] the integer number you want to set the first logic to.
+
+Outputs: N/A
+Sets the specified integer logic for all components of a specific type. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetIntLogicAll_2(type, propertyIndex1, int1, propertyIndex2, int2)
+
+Inputs:
+type: [int] the type of component you want to set int logic for.
+
+propertyIndex1: [int] the index of the first int logic you want to set.
+int1: [int] the integer number you want to set the first logic to.
+
+propertyIndex2: [int] the index of the second int logic you want to set.
+int2: [int] the integer number you want to set the second logic to.
+
+Outputs: N/A
+Sets the two specified integer logics for all components of a specific type. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Component_SetIntLogicAll_3(type, propertyIndex1, int1, propertyIndex2, int2, propertyindex3, int3)
+
+Inputs:
+type: [int] the type of component you want to set int logic for.
+
+propertyIndex1: [int] the index of the first int logic you want to set
+int1: [int] the integer number you want to set the first logic to.
+
+propertyIndex2: [int] the index of the second int logic you want to set.
+int2: [int] the integer number you want to set the second logic to.
+
+propertyIndex3: [int] the index of the third int logic you want to set.
+Int3: [int] the integer number you want to set the third logic to.
+
+Outputs: N/A
+Sets the three specified integer logics for all components of a specific type. Depending on the type of this component this means different things (or nothing at all).```
+
+```
+I:Set_HologramProjector_URL(index, url)
+
+Inputs:
+type: [int] the index of the hologram projector.
+url: [string] the url to set the hologram projector to as a string.
+
+Outputs: N/A
+Sets the url of the specified hologram projector```
+
+```
+I:Set Poster Holder URL(index, url)
+
+Inputs:
+type: [int] the index of the poster holder.
+url: [string] the url to set the poster holder to as a string.
+
+Outputs: N/A
+Sets the url of the specified poster holder```

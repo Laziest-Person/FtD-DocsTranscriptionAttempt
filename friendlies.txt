@@ -1,0 +1,42 @@
+Friendlies
+
+The following API will provide you with the positions of friendly vehicles- in the same manner as
+```
+I:GetFriendlyCount()
+Inputs: N/A
+Outputs: [int] the number of friendlies spawned into the world
+Returns the number of friendly constructs```
+
+```
+I:GetFriendlyInfo(index)
+Inputs: index: [int] 0 is the first construct
+Outputs: [FriendlyInfo] the FriendlyInfo object
+Returns a friendly info object for a friendly vehicle```
+
+```
+I:GetFriendlyInfoById(Id)
+Inputs: Id: [int] the Id you want
+Outputs: [FriendlyInfo] the FriendlyInfo object
+Returns a friendly info object for an Id```
+
+```
+FriendlyInfo
+Valid:[bool] false if the Friendly Info could not be retrieved
+Rotation:[Quaternion] the rotation of the friendly construct
+ReferencePosition: [Vector3] the position of the construct (world East Up North frame) from which PositiveSize and Negative size are referenced
+PositiveSize: [Vector3] the extent of the construct in the right, up, forwards direction relative to ReferencePostion
+NegativeSize: [Vector3] the extent of the construct in the left, down, back direction relative to ReferencePosition
+CenterOfMass: [Vector3] the centre of mass of the construct in world East Up North frame
+Velocity: [Vector3] the velocity of the construct in world East Up North frame
+UpVector: [Vector3] The up vector in world East Up North frame
+RightVector: [Vector3] The up vector in world East Up North frame
+ForwardVector: [Vector3] The forward vector in world East Up North frame
+HealthFraction: [float] the fraction of health (including turrets etc)
+Spares Fraction: [float] the spares fraction. Returns 1 if no spares storage present
+AmmoFraction: [float] the ammo fraction. Returns 1 if no ammo storage present
+FuelFraction: [float] the fuel fraction. Returns 1 if no fuel storage present
+EnergyFraction: [float] the energy fraction. Returns 1 if no batteries present
+PowerFraction: [float] the power fraction. Returns 1 if no fuel storage present
+ElectricPowerFraction: [float] the electric power fraction. Returns 1 if no fuel storage present
+AxisAlignedBoundingBoxMinimum: [Vector3] the world East Up North minimum extent of the construct AxisAlignedBoundingBoxMaximum: [Vector3] the world East Up North maximum extent of the construct BlueprintName: [string] the name
+Id: [int] the unique Id of the construct```

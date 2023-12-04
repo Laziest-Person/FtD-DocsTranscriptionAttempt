@@ -1,0 +1,8 @@
+Mathf:
+Mathf is exposed to you and available static calling so 'Mathf.Min(1,2)' rather than 'Mathf:Min(1,2)
+
+Vector3:
+Unity's Vector3 library is fully exposed to you. You can create a new Vector3 with `v = Vector3(x, y, z)`, and call functions such as `Vector3.Angle(v1, v2)`. Google Unity Vector3 for more information on this library.
+
+Quaternion:
+Unity's Quaternion library is fully exposed to you also. Google it to find out more.

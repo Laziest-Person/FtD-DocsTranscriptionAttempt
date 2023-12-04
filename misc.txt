@@ -1,0 +1,47 @@
+Misc Functions
+
+```
+I:GetTerrainAltitude For Position(x,y,z)
+Inputs:
+x: [float] game world east west position in meters.
+y: [float] game world vertical (not important)
+z: game world north south position in meters.
+Outputs: [float] the terrain altitude in meters where 0 is sea level.
+Returns altitude of the terrain at a position in the world. Can be overloaded with a single Vector3 rather than x,y,z components.```
+
+```
+I:GetTerrainAltitudeForLocalPosition(x,y,z)
+Inputs: 
+x: [float] right offset from construct position in meters.
+y: [float] up offset from construct position in meters
+z: forwards offset from construct position in meters.
+Outputs: [float] the terrain altitude in meters where 0 is sea level.
+Returns altitude of the terrain at a position relative to the construct. Can be overloaded with a single Vector3 rather than x,y,z components.```
+
+```I:GetGravityForAltitude(alt)
+Inputs: alt: [float] altitude (0 is sea level)
+Outputs: [Vector3] gravity vector
+Returns gravity vector for an altitude. gravity.y is the component of interest.```
+
+```
+I:GetTime()
+Inputs: N/A
+Outputs: [float] the time in seconds.
+Returns time with an arbitrary offset (i.e. the time will seldom be 0).```
+
+```I:GetTimeSinceSpawn()
+Inputs: N/A
+Outputs: [float] the time in seconds since the construct spawned.
+Returns time since construct spawned in seconds.```
+
+```
+I:GetGame Time()
+Inputs: N/A
+Outputs: [float] The time since the Instance started in seconds. 
+Returns time since the instance started in seconds..```
+
+```
+I:GetWindDirectionAndMagnitude()
+Inputs: N/A
+Outputs: [Vector3] Vector representing the direction and the magnitude of the wind.
+Get the direction and magnitude of the current wind.```

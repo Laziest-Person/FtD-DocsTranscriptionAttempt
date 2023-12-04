@@ -1,0 +1,163 @@
+Self awareness
+
+```
+I:GetConstructPosition()
+Inputs: N/A
+Outputs: [Vector3] The position (Vector3 has members x, y, and z).
+Returns the position of the construct. The construct's position is essentially the position of the first ever block placed, or the centre of the starting raft that it was built from.```
+
+```
+I:GetConstructForwardVector()
+Inputs: N/A
+Outputs: [Vector3] The forward pointing vector of the construct (it has length 1)
+Return the forward pointing vector of the construct```
+
+```
+I:GetConstruct Right Vector()
+Inputs: N/A
+Outputs: [Vector3] The right pointing vector of the construct (it has length 1)
+Return the right pointing vector of the construct```
+
+```
+I:GetConstruct UpVector()
+Inputs: N/A
+Outputs: [Vector3] The up pointing vector of the construct (it has length 1) Return the up pointing vector of the construct```
+
+```
+I:GetConstructMaxDimensions()
+Inputs: N/A
+Outputs: [Vector3] The size of the vehicle right, up and forwards of its origin
+Returns the 'positive' size of the vehicle (right, up, forwards) relative to its origin (GetConstructPosition()). The coordinates are in local space. This minus GetConstructMinDimensions() provides the full size of the vehicle.```
+
+```
+I:GetConstructMinDimensions()
+Inputs: N/A
+Outputs: [Vector3] The size of the vehicle left, down and back of its origin
+Returns the 'negative' size of the vehicle (left, down, back) relative to its origin (GetConstructPosition()). The coordinates are in local space.```
+
+```
+I:GetConstructRoll()
+Inputs: N/A
+Outputs: [float] The roll angle in degrees
+Return the roll angle in degrees```
+
+```
+I:GetConstructPitch()
+Inputs: N/A
+Outputs: [float] The pitch angle in degrees
+Return the pitch angle in degrees```
+
+```
+I:GetConstruct Yaw()
+Inputs: N/A
+Outputs: [float] The yaw angle in degrees
+Return the yaw angle in degrees```
+
+```
+I:GetConstruct CenterOfMass()
+Inputs: N/A
+Outputs: [Vector3] The position (Vector3 has members x, y, and z).
+Returns the position of the construct's centre of mass in the world```
+
+```
+I:GetAiPosition(mainframeIndex)
+Inputs: mainframeindex: [int] O is the first mainframe.
+Outputs: [Vector3] The position (Vector3 has members x, y, and z).
+Returns the position of the mainframe in the world. Returns Vector3(0,0,0) if no such mainframe exists.```
+
+```
+I:GetVelocityMagnitude()
+Inputs: N/A
+Outputs: [float] magnitude of your velocity in meters per second.
+Returns the magnitude of your velocity in meters per second.```
+
+```
+I:GetForwardsVelocityMagnitude()
+Inputs: N/A
+Outputs: [float] magnitude of your forwards velocity in meters per second.
+Returns the magnitudeof your forwards velocity in the forwards direction in meters per second. A negative value means you're going predominently backwards.```
+
+```
+I:GetVelocityVector()
+Inputs: N/A
+Outputs: [Vector3] Your construct's velocity vector in meters per second
+Returns your construct's velocity vector in world space in meters per second. x is east west, y is up down and z is north south..```
+
+```
+I:GetVelocityVector Normalized()
+Inputs: N/A
+Outputs: [Vector3] Your construct's velocity vector in meters per second- normalized to have a length of 1.
+Returns your construct's velocity vector in world space in meters per second. x is east west, y is up down and z is north south. It's normalized to have a length of 1.```
+
+```
+I:GetAngular Velocity()
+Inputs: N/A
+Outputs: [Vector3] Your construct's angular velocity in world space
+Returns your angular velocity. x is speed of turn around the east->west axis, y is around the vertical axis and z is around the north south axis. You're probably going to want the next function instead of this one...```
+
+```
+I:GetLocalAngular Velocity()
+Inputs: N/A
+Outputs: [Vector3] Your construct's angular velocity in local space
+Returns your angular velocity. x is pitch, y yaw and z roll.```
+
+```
+I:GetAmmoFraction() Inputs: N/A
+Outputs: [float] fraction. 0 to 1. 1 if no ammo storage is available
+Returns the fraction of ammo your construct has left```
+
+```
+I:GetFuelFraction() Inputs: N/A
+Outputs: [float] fraction. 0 to 1. 1 if no fuel storage is available
+Returns the fraction of fuel your construct has left```
+
+```
+I:GetSparesFraction()
+Inputs: N/A
+Outputs: [float] fraction. 0 to 1. 1 if no spares storage is available
+Returns the fraction of spares your construct has left```
+
+```
+I:Get EnergyFraction() Inputs: N/A
+Outputs: [float] fraction. 0 to 1. 1 if no batteries are available
+Returns the fraction of energy your construct has left```
+
+```
+I:GetPowerFraction()
+Inputs: N/A
+Outputs: [float] fraction. 0 to 1
+Returns the fraction of power your construct has left```
+
+```
+I:GetElectricPowerFraction()
+Inputs: N/A
+Outputs: [float] fraction. 0 to 1.
+Returns the fraction of electric power your construct has left```
+
+```
+I:GetHealthFraction()
+Inputs: N/A
+Outputs: [float] fraction. 0 to 1. 1 if full health
+Returns the fraction of health your construct has (including turrets etc)```
+
+```
+I:IsDocked()
+Inputs: N/A
+Outputs: [bool] Docked? true for yes.
+Returns true if the vehicle is docked```
+
+```
+I:GetHealthFractionDifference(time)
+Inputs: time[float]: the time you want the difference measured over. Time will be limited to be between 1 and 30. Outputs: [float] health difference as a fraction (0 to 1)
+Returns health difference over a specified measurement time```
+
+```
+I:GetBlueprintName()
+Inputs: N/A
+Outputs: [string] name of the bluepritn.
+Returns the the name of this blueprint.```
+
+```
+I:GetUniqueId()
+Inputs: N/A
+Outputs: [int] the unique id.```

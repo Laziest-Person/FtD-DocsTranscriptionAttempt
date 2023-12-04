@@ -1,0 +1,32 @@
+LUA Syntax
+
+String Concatenation
+String Concatenation is done with `..` i.e ```'Hello' .. ' Player'``` creates 'Hello Player'. Numbers are automatically converted to strings.
+
+For loops
+For loops (in this example looping from 0 to 10 in increments of 1) use:
+```
+for ii=0,10,1 do
+-- your code here (note that we don't need to define the step size of 1.. 1 is the default anyway) end```
+
+Calling functions
+The colon (:) is used for calling functions. This is why all calls to the interface start with I: (i.e. `I:RequestWater Forwards(5))`
+
+Comments
+-- creates a comment. So this line, in LUA, would be a comment
+
+Global variables
+Declare a variable outside of your Update function and it will be persistent from call to call, the example below will log the counter to the Log forever (1,2,3,4,5,etc).
+```
+count = 0;
+function MyUpdateFunction()
+count = count + 1;
+I:Log(count);
+end```
+
+If Statements
+To conditionally execute some code you can use an if statement. In this example we only execute the line if 'a' is greater than 0.:
+```
+if a>0 then
+-- your code here
+end```

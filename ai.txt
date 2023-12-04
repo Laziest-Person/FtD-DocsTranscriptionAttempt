@@ -1,0 +1,24 @@
+﻿AI
+
+```
+I:GetAIMovement Mode(index)
+Inputs:
+Index: [int] Index of the AI mainframe
+Outputs: [string] movement mode of the AI mainframe. Possible modes: Off, Manual, Automatic, Fleet
+returns the movement mode of the AI mainframe specified by the index```
+
+```
+I:GetAIFiringMode(index)
+Inputs:
+index: [int] index of the AI mainframe
+Outputs: [string] firing mode of the AI mainframe. Possible modes: Off, On
+returns the firing mode of the Al mainframe specified by the index```
+
+```
+I.AIMode - Obsolete, please use 'GetAIMovementMode' instead (read only) Outputs: [string] Returns the mode of the AI. Possible modes: off, on
+Returns the mode of the AI mainframe.```
+
+```
+I.Construct Type - obsolete
+Outputs: [string] The type of construct.
+Al's concept of what type of craft this ship is. Posible types: none```

@@ -1,0 +1,74 @@
+Missile Guidance
+
+Connect LUA Transceivers to your missile blocks to allow missiles from those missile blocks to be send LUA Guidance points 
+
+```
+I:GetLuaTransceiverCount()
+Inputs: N/A
+Outputs: [int] the number of LuaTransceivers
+Return the number of LuaTransceivers. Each transceiver can have a number of missiles which are controllable```
+
+```
+I:GetLuaControlledMissileCount(luaTransceiverIndex)
+Inputs: luaTransceiverIndex: [int] the index of the LuaTransceiver where O is the first one
+Outputs: [int] the number of missiles associated with that LuaTransceiver
+Returns the number of missiles which that luaTransceiver has communications link to```
+
+```
+I:GetLuaTransceiverInfo(luaTransceiverIndex)
+Inputs: luaTransceiverIndex: [int] the index of the LuaTransceiver where 0 is the first one
+Outputs: [BlockInfo] a BlockInfo object for the LuaTransceiver's Launchpad
+Returns a BlockInfo object for the LuaTransceiver's Launchpad. If no Launch pad exists it'll return it for the LuaTransceiver.```
+
+See the Components tab for the BlockInfo structure```
+
+```
+I:GetLuaControlledMissileInfo(luaTransceiverIndex,missileIndex)
+Inputs: 
+luaTransceiverIndex: [int] 0 is the first one.
+missileIndex: [int] 0 is the first missile.
+Outputs: [MissileWarningInfo] Get a MissileWarningInfo object for your missile.
+Returns a MissileWarningInfo structure for your missile. You can tell where it is and how fast it is going from this```
+
+See the Missile Warning tab for the MissileWarningInfo structure
+
+```
+I:SetLuaControlledMissileAimPoint(luaTransceiverIndex,missileIndex,x,y,z)
+Inputs:
+luaTransceiverIndex: [int] as above.
+missileIndex:[int] as above.
+x,y,z: [floats] global coordinates of the aim point
+Outputs: N/A
+Sets the aim point. No guidance modules will help achieve this aim point so do your own predictive guidance. Needs a lua receiver component ON the missile to work.```
+
+```
+I:DetonateLuaControlledMissile(luaTransceiverIndex,missileIndex)
+Inputs:
+luaTransceiverIndex: [int] as above.
+missileIndex:[int] as above.
+Outputs: N/A
+Explodes the missile. Needs a lua receiver component ON the missile to work.```
+
+```I:IsLuaControlledMissileAnInterceptor(luaTransceiverIndex, missileIndex)
+Inputs:
+luaTranceiverIndex:[int] O is the first one
+missileIndex:[int] 0 is the first one
+Outputs: [bool]: true means the missile has an interceptor module, otherwise false is returned. If the missile has no lua receiver false will be returned.
+Find out if the missile has an interceptor capability.```
+
+```
+I:SetLuaControlledMissileInterceptor Target(luaTransceiverIndex, missileIndex,targetIndex)
+Inputs:
+luaTransceiver Index:[int] 0 is the first one
+missileIndex:[int] 0 is the first one,
+targetIndex:[int] 0 is the first missile which that mainframe has a warning for
+Outputs: N/A
+Set the target of an interceptor missile to be a specific missile for which a warning exists. This is enough to get the interceptor missile to behave normally but if you want to actually guide it yourself use SetLuaControlledMissileInterceptor StandardGuidanceOnOff to turn the guidance off```
+
+```
+I:SetLuaControlledMissileInterceptorStandardGuidanceOnOff(luaTranceiver,missileIndex, onOff)
+Inputs:
+luaTransceiverIndex:[int] 0 is the first one
+missileIndex:[int] 0 is the first one
+onOff:[bool] true will use standard missile guidance to aim at the interceptors target, false will rely on SetLuaControlledMissileAimpoint for aiming coordinates.
+Outputs: N/A```

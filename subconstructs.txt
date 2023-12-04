@@ -1,0 +1,75 @@
+SubConstructs
+
+SubConstructs (turrets and spin blocks) have their own interface dedicated to work with stacked SubConstructs. They all have a unique persistent index which will never be modified in the blueprint (that index starts at 1)
+
+```
+I:GetAllSubconstructsCount()
+Inputs: N/A
+Outputs: [int] the total number of SubConstructs on the vehicle
+Returns the number of SubConstructs on the vehicle, including SubConstructs on SubConstructs```
+
+```
+I:GetSubConstructIdentifier(index)
+Inputs: index:[int] 0 is the first SubConstruct
+Outputs: [int] the persistent identifier of the SubConstruct
+Returns the identifier of the SubConstruct. The indices start at 0 and are in no particular order```
+
+```
+I:GetSubconstructsChildrenCount(SubConstructIdentifier)
+Inputs: SubConstructIdentifier:[int] the persistent identifier of the SubConstruct
+Outputs: [int] all the number of SubConstructs directly placed on the given SubConstruct.
+Returns the number of SubConstructs on the given SubConstruct```
+
+```
+I:GetSubConstructChildIdentifier(SubConstructIdentifier, index)
+Inputs: SubConstructIdentifier:[int] the persistent identifier of the parent SubConstruct
+index:[int] 0 is the first child SubConstruct
+Outputs: [int] the persistent identifier of the SubConstruct
+Returns the identifier of the child SubConstruct placed on the parent SubConstruct. The indices start at 0 and are in no particular order```
+
+```
+I:GetParent(SubConstructIdentifier)
+Inputs: SubConstructIdentifier:[int] the persistent identifier of the SubConstruct
+Outputs: [int] the persistent index of the parent SubConstruct of the given SubConstruct.
+Returns the persistent index of the parent SubConstruct of the given SubConstruct, '0' for the MainConstruct, '-1' if not found```
+
+```
+I:IsTurret (SubConstructIdentifier)
+Inputs: SubConstructIdentifier:[int] the persistent identifier of the SubConstruct
+Outputs: [bool] 'true' if the SubConstruct is a turret, 'false' otherwise.
+Indicates if the SubConstruct is a turret or not```
+
+```
+I:IsSpinBlock(SubConstructIdentifier)
+Inputs: SubConstructIdentifier:[int] the persistent identifier of the SubConstruct
+Outputs: [bool] 'true' if the SubConstruct is a spin block, 'false' otherwise.
+Indicates if the SubConstruct is a spin block or not```
+
+```
+I:IsPiston(SubConstructIdentifier)
+Inputs: SubConstructIdentifier:[int] the persistent identifier of the SubConstruct
+Outputs: [bool] 'true' if the SubConstruct is a piston, 'false' otherwise.
+Indicates if the SubConstruct is a piston or not```
+
+```
+I:IsAlive(SubConstructIdentifier)
+Inputs: SubConstructidentifier:[int] the persistent identifier of the SubConstruct
+Outputs: [bool] 'true' if the SubConstruct is not completely destroyed.
+Indicates if the SubConstruct is destroyed or not```
+
+```
+I:IsSubConstructOnHull(SubConstructIdentifier)
+Inputs: SubConstructidentifier:[int] the persistent identifier of the SubConstruct
+Outputs: [bool] 'true' if the SubConstruct is on the hull.
+Indicates if the SubConstruct is on the hull or not```
+
+```
+I:GetSubConstructInfo(SubConstructIdentifier)
+Inputs: SubConstructIdentifier:[int] the persistent identifier of the SubConstruct
+Outputs: [Blockinfo] a Blockinfo object for the SubConstruct active block (the SpinBlock block, the piston or the turret block)
+Returns a BlockInfo object for the active block of the SubConstruct, and invalid BlockInfo if the SubConstruct hasn't been found.```
+
+```
+I:GetSubConstructIdleRotation(SubConstructIdentifier)
+Inputs: SubConstructidentifier:[int] the persistent identifier of the SubConstruct
+Outputs: [Quaternion] the rotation of the subconstruct relative to its parent as it was first placed.```
