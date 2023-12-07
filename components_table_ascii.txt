@@ -1,0 +1,134 @@
+Main Index | Component | Sub-index | Type | Property | What they do
+--------------------------------------------------------------------
+0 | Balloon deployer | 0 | bool | Get/Set | on/off state of balloon deployer
+1 | Drive maintainer | 0 | int | Get/Set | Get/Set the channel of the drive maintainer (0=Primary, 1=Secondary, 2=Tertiary)  
+1 | Drive maintainer | 1 | int | Get/Set | Get/Set the channel the drive maintainer is set to.    
+2 | All pumps (helium and air) | 0 | bool | Get/Set | Get/Set on/off pumps buoyancy fraction between 0 and 1 (true/false respectively) 
+2 | All pumps (helium and air) | 0 | float | Get/Set | Get/Set the buoyancy fraction
+2 | All pumps (helium and air) | 1 | float | Get | Get fraction of volume that is flooded    
+3 | Resource gatherer | 0 | bool | Get/Set | on/off
+4 | Oil drill | 0 | bool | Get/Set | on/off
+5 | Ammo processor | 0 | bool | Get/Set | on/off
+6 | Fuel refinery | 1 | bool | Get/Set | on/off
+6 | Fuel refinery | 0 | float | Get | get dangerous gas leve
+6 | Fuel refinery | 1 | float | Get | Get refining efficiency
+6 | Fuel refinery | 2 | float | Get | Get time per batch
+7 | Tractor beams | 0 | bool | Get/Set | on/off
+7 | Tractor beams | 0 | int | Get | Get the unique id of the selected vehicle
+7 | Tractor beams | 0 | int | Set | Select the vehicle with the specified unique id
+7 | Tractor beams | 0 | float | Get/Set | Get/Set hold distance
+7 | Tractor beams | 1 | float | Get/Set | Get/Set the hold azimuth
+7 | Tractor beams | 2 | float | Get/Set | Get/Set the hold elevation
+8 | Hydrofoils | 0 | float | Get/Set | Get/Set the angle of the hydrofoil
+9 | Propulsion | 1 | float | Get/Set | Get/Set the drive fraction.
+9 | Propulsion | 2 | float | Get | Get propulsion requests to this component so far this frame.
+9 | Propulsion | 3 | float | Set | Add a propulsion request to this component.
+10 | Shield Projector | 0 | bool | Get | Get Whether the shield is functioning.
+10 | Shield Projector | 0 | int | Get/Set | Get/Set the shield type (0=off, 1=reflect, 2=disrupt, 3=laser absorb)
+10 | Shield Projector | 0 | float | Get/Set | Get/Set shield strength.
+10 | Shield Projector | 1 | float | Get/Set | Get/Set shield azimuth.
+10 | Shield Projector | 2 | float | Get/Set | Get/Set shield elevation.
+10 | Shield Projector | 3 | float | Get/Set | Get/Set shield range.
+10 | Shield Projector | 4 | float | Get/Set | Get/Set shield width.
+10 | Shield Projector | 5 | float | Get/Set | Get/Set shield height.
+10 | Shield Projector | 6 | float | Get/Set | Get/Set shield alpha.
+10 | Shield Projector | 7 | float | Get/Set | Get/Set shield red.
+10 | Shield Projector | 8 | float | Get/Set | Get/Set shield green.
+10 | Shield Projector | 9 | float | Get/Set | Get/Set shield blue.
+11 | Helium Pump | 0 | bool | Get | Whether the airpump is on (buoyancy fraction > 0).
+11 | Helium Pump | 0 | bool | Set | Sets Whether the airpump is on (buoyancy fraction > 0).
+11 | Helium Pump | 0 | float | Get/Set | Get/Set buoyancy fraction.
+11 | Helium Pump | 1 | float | Get | Get fraction of volume that is flooded.
+12 | Spotlight | 0 | float | Get/Set | Get/Set cone angle.
+12 | Spotlight | 1 | float | Get/Set | Get/Set azimuth angle.
+12 | Spotlight | 2 | float | Get/Set | Get/Set elevation angle.
+12 | Spotlight | 3 | float | Get/Set | Get/Set intensity.
+12 | Spotlight | 4 | float | Get/Set | Get/Set range.
+12 | Spotlight | 5 | float | Get/Set | Get/Set red.
+12 | Spotlight | 6 | float | Get/Set | Get/Set green.
+12 | Spotlight | 7 | float | Get/Set | Get/Set blue.
+13 | Advanced Cannon laser targeter | 0 | Int | Get/Set   | Get the weapon index of the firing piece it is attached to. -1 otherwise.
+13 | Advanced Cannon laser targeter | 0 | float | Get/Set | Get/Set timed fuse time.
+13 | Advanced Cannon laser targeter | 1 | float | Get | Get altitude fuse 'low' altitude.
+13 | Advanced Cannon laser targeter | 1 | float | Set | Set altitude fuse altitude.
+13 | Advanced Cannon laser targeter | 2 | float | Get | Get altitude fuse 'high' altitude.
+14 | CRAM cannon laser targetter | 0 | Int | Get | Get the weapon index of the firing piece it is attached to. -1 otherwise.
+14 | CRAM cannon laser targetter | 0 | float | Get | Get/Set timed fuse time.
+14 | CRAM cannon laser targetter | 1 | float | Get | Get altitude fuse 'low' altitude.
+14 | CRAM cannon laser targetter | 1 | float | Set | Set altitude fuse altitude.
+14 | CRAM cannon laser targetter | 2 | float | Get | Get altitude fuse 'high' altitude.
+15 | Warp drive | 0 | bool | Get | Get whether it's charging.
+15 | Warp drive | 0 | Int | Set | 0=start charging, 1=warp
+15 | Warp drive | 0 | float | Get | Get Right jump distance.
+15 | Warp drive | 1 | float | Get | Get Up jump distance.
+15 | Warp drive | 2 | float | Get | Get Forwards jump distance.
+15 | Warp drive | 3 | float | Get | Get Right jump factor based on vehicle size and warp rod size.
+15 | Warp drive | 4 | float | Get | Get Up jump factor.
+15 | Warp drive | 5 | float | Get | Get Forwards jump factor.
+15 | Warp drive | 6 | float | Get | Get Total length of attached chargers.
+15 | Warp drive | 7 | float | Get | Get Charge duration.
+16 | Particle cannon lense | 0 | Int | Get | Get the weapon index of the firing piece it is attached to. -1 otherwise.
+17 | Steam boiler controller | 0 | float | Get/Set | Get/Set burn rate
+17 | Steam boiler controller | 1 | float | Get | Get Volume of attached boiler.
+17 | Steam boiler controller | 2 | float | Get | Get pressure of attached boiler.
+18 | Fuel engine generator | 0 | float | Get/Set | Get/Set max relative RPM.
+18 | Fuel engine generator | 1 | float | Get/Set | Get/Set battery charge drive.
+18 | Fuel engine generator | 2 | float | Get | Get current relative RPM.
+18 | Fuel engine generator | 3 | float | Get | Get estimate of maximum power.
+18 | Fuel engine generator | 4 | float | Get | Get fuel usage per second.
+19 | Sail Main Block | 0 | int | Get | Get the sail type (0=three point sail, 1=square rigged sail)
+19 | Sail Main Block | 0 | float | Get/Set | Get/Set Mast winch setting.
+19 | Sail Main Block | 1 | float | Get/Set | Get/Set Boom winch setting. 
+19 | Sail Main Block | 2 | float | Get | Get Mast height.
+19 | Sail Main Block | 3 | float | Get | Get Boom length. 
+20 | Advanced Cannon Ammo Intake | 0 | Int | Get/Set | Get/Set (Get or select) the unique id of the associated ammo controller. -1 otherwise.   
+20 | Advanced Cannon Ammo Intake | 1 | int | Get/Set | Get/Set (Get or select) the component index of the associated ammo controller. -1 otherwise.   
+20 | Advanced Cannon Ammo Intake | 2 | Int | Get | Get the weapon index of the firing piece it is attached to. -1 otherwise.
+21 | Advanced Cannon Ammo Controller | 0 | Int | Get | Get unique Id.   
+22 | Al Wireless Transmitter | 0 | Int | Get/Set | Get/Set channel.  
+23 | AI Wireless Receiver | 0 | int | Get/Set | Get/Set channel. 
+24 | AI aimpoint selection card | 0 | int | Get/Set | Get/Set aimpoint selection type (0=random, 1=ammo and AI)
+24 | AI aimpoint selection card | 0 | float | Get/Set | Get/Set retarget time
+25 | Detection Component | 0 | bool | Get/Set | On/off.
+26 | AI Mainframe | 0 | int | Get/Set | Get/Set Al movement mode (0= Off 1 = Manual, 2=Automatic, 3=Fleet).
+26 | AI Mainframe | 1 | int | Get/Set | Get/Set Al firing mode (0= Off. 1 = On).
+27 | Laser Colorer | 0 | float | Get/Set | Get/Set red.  
+27 | Laser Colorer | 1 | float | Get/Set | Get/Set green.    
+27 | Laser Colorer | 2 | float | Get/Set | Get/Set blue.
+28 | Laser Missile Defence | 0 | float | Get/Set | Get/Set red.
+28 | Laser Missile Defence | 1 | float | Get/Set | Get/Set green.    
+28 | Laser Missile Defence | 2 | float | Get/Set | Get/Set blue.   
+29 | Particle Cannon | 0 | float | Get/Set | Get/Set Red.  
+29 | Particle Cannon | 1 | float | Get/Set | Get/Set Green.  
+29 | Particle Cannon | 2 | float | Get/Set | Get/Set Blue.   
+30 | Light Fitting | 0 | float | Get/Set | Get/Set Intensity.   
+30 | Light Fitting | 1 | float | Get/Set | Get/Set Range.    
+30 | Light Fitting | 2 | float | Get/Set | Get/Set Red.    
+30 | Light Fitting | 3 | float | Get/Set | Get/Set Green.     
+30 | Light Fitting | 4 | float | Get/Set | Get/Set Blue.  
+31 | Simple Laser | 0 | float | Get/Set | Get/Set Red.   
+31 | Simple Laser | 1 | float | Get/Set | Get/Set Green.  
+31 | Simple Laser | 2 | float | Get/Set | Get/Set Blue.    
+32 | Smoke Generator | 0 | float | Get/Set | Get/Set Particle speed.     
+32 | Smoke Generator | 1 | float | Get/Set | Get/Set Particle size.    
+32 | Smoke Generator | 2 | float | Get/Set | Get/Set Red.     
+32 | Smoke Generator | 3 | float | Get/Set | Get/Set Green.      
+32 | Smoke Generator | 4 | float | Get/Set | Get/Set Blue.  
+33 | Hologram Projector | 0 | bool | Get/Set | Get/Set On/off.   
+33 | Hologram Projector | 1 | bool | Get/Set | Get/Set Mirrored. 
+33 | Hologram Projector | 0 | float | Get/Set | Get/Set Width.    
+33 | Hologram Projector | 1 | float | Get/Set | Get/Set Height.     
+33 | Hologram Projector | 2 | float | Get/Set | Get/Set Distance.     
+33 | Hologram Projector | 3 | float | Get/Set | Get/Set Right translation.      
+33 | Hologram Projector | 4 | float | Get/Set | Get/Set Up translation.     
+33 | Hologram Projector | 5 | float | Get/Set | Get/Set Azimuth.     
+33 | Hologram Projector | 6 | float | Get/Set | Get/Set Elevation.    
+33 | Hologram Projector | 7 | float | Get/Set | Get/Set Rotation.   
+34 | Poster Holder | 0 | float | Get/Set | Get/Set Width.    
+34 | Poster Holder | 1 | float | Get/Set | Get/Set Height.
+35 | Electric engine | 0 | float | Get/Set | Get/Set power fraction.  
+36 | Steam boiler controller | 0 | float | Get/Set | Get/Set current burn rate  
+36 | Steam boiler controller | 1 | float | Get | Get the storage module pressure   
+37 | Air pump | 0 | bool | Get/Set | Get/Set Whether the air pump is currently off or on. (buoyancy fraction 0 or 1)
+37 | Air pump | 0 | float | Get/Set | Get/set buoyancy fraction.
+37 | Air pump | 1 | float | Get | Get The fraction of the volume that is flooded.
